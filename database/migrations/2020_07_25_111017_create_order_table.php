@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Query\Expression;
 
 class CreateOrderTable extends Migration
 {
@@ -20,6 +21,7 @@ class CreateOrderTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
 
             $table->float('amount'); //total order amount after discount
+            $table->json('razorpay_meta')->default(new Expression('(JSON_ARRAY())'));
 
             $table->string('status');
             /*** == Statuses ===

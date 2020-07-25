@@ -22,3 +22,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/checkout', 'OrderController@checkout');
+Route::post('/checkout', 'OrderController@checkout_process');
+
+Route::post('/callback', 'OrderController@callback');

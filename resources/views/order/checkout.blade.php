@@ -10,7 +10,7 @@
                 <div class="card-body">
                     
                     <form action="checkout" method="POST">
-
+                    @csrf
                         <div class="form-group">
                             <label for="amount">Amount:</label>
                             <input type="text" class="form-control" id="amount" name="amount" value="0">
